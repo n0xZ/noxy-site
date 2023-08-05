@@ -1,0 +1,11 @@
+---
+type Props = {
+	project: { name: string; description: string | null; url: string }
+}
+const { project } = Astro.props
+---
+
+<li class=" text-primary/90 ">
+	<a href={project.url} target="_blank" rel="noreferrer" class="underline ">{project.name}</a>
+	<p  class=" text-muted-foreground">{project.description}</p>
+</li>
