@@ -4,7 +4,7 @@ import Project from './Project.astro'
 
 const API_URL = import.meta.env.API_URL
 const ACCESS_TOKEN= import.meta.env.ACCESS_TOKEN
-const res = await fetch(API_URL,{headers:{Authorization:`Bearer ${ACCESS_TOKEN}`,"Cache-Control":"max-age=604800"}})
+const res = await fetch(API_URL)
 const data : ProjectsResponse = await res.json()
 const publicProjects = data.filter((p)=>!p.private)
 
