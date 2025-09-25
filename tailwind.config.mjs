@@ -1,7 +1,5 @@
-const { fontFamily } = require('tailwindcss/defaultTheme')
-
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
 	darkMode: ['class'],
 	content: ['src/**/*.astro', 'src/components/**/*.astro'],
 	theme: {
@@ -54,17 +52,17 @@ module.exports = {
 				sm: 'calc(var(--radius) - 4px)',
 			},
 			fontFamily: {
-				sans: ['var(--font-sans)', ...fontFamily.sans],
+				sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
 				inter: ['Inter', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {
-					from: { height: 0 },
+					from: { height: '0' },
 					to: { height: 'var(--radix-accordion-content-height)' },
 				},
 				'accordion-up': {
 					from: { height: 'var(--radix-accordion-content-height)' },
-					to: { height: 0 },
+					to: { height: '0' },
 				},
 			},
 			animation: {
@@ -73,5 +71,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require('tailwindcss-animate')],
+	plugins: [],
 }
